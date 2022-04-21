@@ -5,6 +5,8 @@ import Reservations from "./components/reservations/Reservations";
 // React router DOM
 import { Routes, Route } from "react-router-dom";
 
+import {ToastContainer} from 'react-toastify'
+
 const App = () => {
   return (
     <div className="App">
@@ -14,6 +16,7 @@ const App = () => {
         <Route path="/customers" element={<Customers />} />
         <Route path="/reservations" element={<Reservations />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 };

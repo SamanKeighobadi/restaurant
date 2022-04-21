@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {useState} from 'react'
 import { addFoodToCustomer } from "../../redux/features/customerSlice";
+import {Container} from 'react-bootstrap'
 
 const Customers = () => {
 
@@ -11,8 +12,8 @@ const Customers = () => {
 
   return (
     <div>
+      <Container>
       <h2>customers</h2>
-      <div>
         {customers.map((customer, index) => (
           <ul key={index}>
             <li>
@@ -43,7 +44,7 @@ const Customers = () => {
             </li>
           </ul>
         ))}
-      </div>
+      </Container>
     </div>
   );
 };

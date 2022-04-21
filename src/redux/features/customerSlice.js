@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 export const customerSlice = createSlice({
   name: "customer",
@@ -13,6 +14,7 @@ export const customerSlice = createSlice({
       state.value.forEach((customer) => {
         if (customer.id === action.payload.id) {
           customer.food.push(action.payload.food);
+          
         }
       });
     },
