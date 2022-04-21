@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { addReservations, deleteReservations } from "./redux/features/reservationsSlice";
 import { addCustomer, addFoodToCustomer } from "./redux/features/customerSlice";
+import Header from "./components/common/Header";
 
 const App = () => {
   const reservations = useSelector((state) => state.reservations.value);
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Header />
       <h1>restaurant redux toolkit</h1>
       <div>
         <input
