@@ -7,10 +7,12 @@ export const customerSlice = createSlice({
     },
     reducers:{
         addCustomer:(state,action) =>{
-            
+            state.value.push(action.payload)
         }
     }
 });
+
+export const {addCustomer} = customerSlice.actions
 
 
 export default customerSlice.reducer;
