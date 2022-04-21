@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { addReservations } from "./redux/features/reservationsSlice";
+import { addReservations, deleteReservations } from "./redux/features/reservationsSlice";
 
 const App = () => {
   const reservations = useSelector((state) => state.reservations.value);
@@ -22,7 +22,7 @@ const App = () => {
       </div>
       {reservations.map((res, index) => (
         <ul key={index}>
-          <li> {res} </li>
+          <li> {res} <span onClick={() => dispatch(deleteReservations(index))}>&times;</span> </li> 
         </ul>
       ))}
     </div>
