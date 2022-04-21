@@ -1,17 +1,17 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const reservationsSlice = createSlice({
-    name:"reservations",
-    initialState:{
-        value:[]
+  name: "reservations",
+  initialState: {
+    value: ["saman keighobadi"],
+  },
+  reducers: {
+    addReservations: (state, action) => {
+      state.value.push(action.payload);
     },
-    reducers:{
-    addReservations:(state,action) =>{
-
-    }        
-    }
+  },
 });
 
-export const {addReservations} = reservationsSlice.actions;
+export const { addReservations } = reservationsSlice.actions;
 
 export default reservationsSlice.reducer;
