@@ -1,49 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
-import {useState} from 'react'
-import { addFoodToCustomer } from "../../redux/features/customerSlice";
+import { useSelector } from "react-redux";
 
-import {Container} from 'react-bootstrap'
+import { Container } from "react-bootstrap";
+import Customer from "./Customer";
 
 const Customers = () => {
-
-    const [food, setFood] = useState();
-
-    const customers = useSelector(state => state.customer.value);
-    const dispatch = useDispatch();
-
+  const customers = useSelector((state) => state.customer.value);
+  
   return (
     <div>
       <Container>
-      <h2>customers</h2>
+        <h2>Customers</h2>
         {customers.map((customer, index) => (
-          <ul key={index}>
-            <li>
-              {" "}
-              {customer.name}
-              <span>
-                {customer.food.map((f) => (
-                  <span>{f}</span>
-                ))}
-              </span>
-              <input
-                type={"text"}
-                placeholder="food"
-                onChange={(e) => setFood(e.target.value)}
-              />
-              <button
-                onClick={() =>
-                  dispatch(
-                    addFoodToCustomer({
-                      id: customer.id,
-                      food,
-                    })
-                  )
-                }
-              >
-                add
-              </button>
-            </li>
-          </ul>
+          <div key={index}>
+            <Customer name={customer.name} id={customer.id} food={customer.food} />
+          </div>
         ))}
       </Container>
     </div>

@@ -13,8 +13,7 @@ export const customerSlice = createSlice({
     addFoodToCustomer: (state, action) => {
       state.value.forEach((customer) => {
         if (customer.id === action.payload.id) {
-          customer.food.push(action.payload.food);
-          
+          customer.food.push(action.payload.food);       
         }
       });
     },
