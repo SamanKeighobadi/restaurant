@@ -14,7 +14,7 @@ const Reservation = ({ name, id }) => {
 
   return (
     <div>
-      <Card className="mt-2 " style={{cursor:"pointer"}} >
+      <Card className="mt-4 " style={{cursor:"pointer"}} >
         <Card.Body
           onClick={() => {
             dispatch(
