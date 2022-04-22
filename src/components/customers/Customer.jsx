@@ -1,5 +1,8 @@
-import { useDispatch } from "react-redux";
 import { useState } from "react";
+// Redux
+import { useDispatch } from "react-redux";
+import { addFoodToCustomer } from "../../redux/features/customerSlice";
+// React bootstrap
 import {
   FormControl,
   Form,
@@ -9,7 +12,8 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import { addFoodToCustomer } from "../../redux/features/customerSlice";
+// PropTypes
+import PropTypes from 'prop-types';
 
 const Customer = ({ name, food, id }) => {
   const dispatch = useDispatch();
@@ -72,5 +76,11 @@ const Customer = ({ name, food, id }) => {
     </div>
   );
 };
+
+Customer.propTypes = {
+  name:PropTypes.string,
+  id:PropTypes.string,
+  food:PropTypes.arrayOf(PropTypes.string)
+}
 
 export default Customer;

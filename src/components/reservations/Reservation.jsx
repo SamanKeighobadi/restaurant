@@ -6,6 +6,8 @@ import { deleteReservations } from "../../redux/features/reservationsSlice";
 import {Card} from "react-bootstrap";
 // uuid 
 import { v4 as uuid } from "uuid";
+// PropTypes
+import PropTypes from 'prop-types';
 
 const Reservation = ({ name, id }) => {
   const dispatch = useDispatch();
@@ -32,5 +34,10 @@ const Reservation = ({ name, id }) => {
     </div>
   );
 };
+
+Reservation.propTypes = {
+  name:PropTypes.string,
+  id:PropTypes.string
+}
 
 export default Reservation;
