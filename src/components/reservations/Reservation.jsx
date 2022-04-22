@@ -37,7 +37,7 @@ const Reservation = ({ name, id }) => {
 
 Reservation.propTypes = {
   name:PropTypes.string,
-  id:PropTypes.string
+  id:PropTypes.number
 }
 
 export default Reservation;
