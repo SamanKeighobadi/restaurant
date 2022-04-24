@@ -19,7 +19,7 @@ const Reservations = () => {
   };
 
   return (
-    <Container>
+    <Container className="mt-4">
       <Form onSubmit={(e) => onSubmit(e)}>
         <Form.Label>Reservation name</Form.Label>
         <InputGroup>
@@ -44,7 +44,7 @@ const Reservations = () => {
           <Reservation name={reservation} id={index} />
         </div>
       )):(
-        <Alert variant="warning" className="mt-5 w-50 mx-auto">
+        <Alert variant="warning" className="mt-5 ">
             <Alert.Heading>
             No reservation made at this time
             </Alert.Heading>

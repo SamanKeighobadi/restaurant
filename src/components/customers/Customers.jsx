@@ -19,7 +19,7 @@ const Customers = () => {
             />
           </div>
         )):(
-          <Alert variant="warning" className="mt-5 w-50 mx-auto">
+          <Alert variant="warning" className="mt-5">
             <Alert.Heading>
             There is no customer yet
             </Alert.Heading>
